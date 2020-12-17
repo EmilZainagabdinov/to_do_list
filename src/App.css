@@ -1,3 +1,56 @@
 .App {
   text-align: center;
+  margin: 50px auto;
+  max-width: 800px;
+}
+
+.addTaskForm {
+  height: 30px;
+  display: flex;
+  column-gap: 20px;
+}
+
+.taskFormInput {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.taskFormButton {
+  width: 100px;
+  border: none;
+  outline: none;
+  background-color: dodgerblue;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 0;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 4px;
+  color: #333;
+}
+
+.taskText {
+  margin: 0;
+}
+
+.removeButton {
+  border: none;
+  outline: none;
+  background-color: firebrick;
+  color: #fff;
+  height: 18px;
+  width: 18px;
+  border-radius: 4px;
+  text-align: center;
+  padding: 0;
 }
