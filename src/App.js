@@ -7,9 +7,9 @@ import Task from "./components/Task/Task";
 const App = () => {
   const [toDoList, setToDoList] = useState([
     {id: '4KCiJloh8TUUNSe5qSBj3', task: 'Pre-order Cyberpunk 2077', isActive: true},
-    {id: 'THF32GMlMBgSjXpL6TX48', task: 'Download Cyberpunk 2007', status: true},
-    {id: 'ahbsQpCutKPH1iN3dgK9-', task: 'Play Cyberpunk 2077', status: true},
-    {id: 'cZRCu9Od8-JypU3-jZ3ea', task: 'Get butthurt', status: true}
+    {id: 'THF32GMlMBgSjXpL6TX48', task: 'Download Cyberpunk 2007', isActive: true},
+    {id: 'ahbsQpCutKPH1iN3dgK9-', task: 'Play Cyberpunk 2077', isActive: true},
+    {id: 'cZRCu9Od8-JypU3-jZ3ea', task: 'Get butthurt', isActive: true}
   ]);
 
   const [inputField, setInputField] = useState('');
@@ -24,7 +24,7 @@ const App = () => {
     const task = {};
     task.task = inputField;
     task.id = nanoid();
-    task.status = true;
+    task.isActive = true;
 
     const toDoListCopy = [...toDoList];
     toDoListCopy.push(task);
@@ -41,6 +41,17 @@ const App = () => {
     setToDoList(toDoListCopy);
   };
 
+  const checkDone = id => {
+    const index = toDoList.findIndex(task => task.id === id);
+    const taskCopy = {...toDoList[index]};
+    taskCopy.isActive = !taskCopy.isActive;
+
+    const toDoListCopy = [...toDoList];
+    toDoListCopy[index] = taskCopy;
+
+    setToDoList(toDoListCopy);
+  };
+
   const taskList = (
       <>
         {toDoList.map((task) => {
@@ -48,6 +59,7 @@ const App = () => {
               key={task.id}
               taskText={task.task}
               taskStatus={task.isActive}
+              done={() => checkDone(task.id)}
               remove={() => {
                 removeTask(task.id)
               }}
