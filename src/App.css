@@ -29,7 +29,7 @@
   border-radius: 4px;
 }
 
-.task {
+.taskBody {
   display: flex;
   justify-content: space-between;
   margin: 10px 0 0;
@@ -39,8 +39,27 @@
   color: #333;
 }
 
-.taskText {
+.checkBox {
+  margin-right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task {
   margin: 0;
+  display: flex;
+}
+
+.task p {
+  margin: 0;
+}
+
+.taskFinished {
+  color: #aaa;
+}
+
+.taskFinished p {
+  text-decoration: line-through;
 }
 
 .removeButton {
