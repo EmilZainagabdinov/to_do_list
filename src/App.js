@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { nanoid } from 'nanoid';
+import {nanoid} from 'nanoid';
 import './App.css';
 import AddTaskForm from "./components/AddTaskForm/AddTaskForm";
 import Task from "./components/Task/Task";
@@ -39,7 +39,7 @@ const App = () => {
     toDoListCopy.splice(index, 1);
 
     setToDoList(toDoListCopy);
-  }
+  };
 
   const taskList = (
       <>
@@ -48,21 +48,23 @@ const App = () => {
               key={task.id}
               taskText={task.task}
               taskStatus={task.isActive}
-              remove={() => {removeTask(task.id)}}
+              remove={() => {
+                removeTask(task.id)
+              }}
           />
         })}
       </>
   );
 
   return (
-    <div className="App">
-      <AddTaskForm
-          input={inputField}
-          onAddClick={addTask}
-          onTaskChange={event => saveInput(event)}
-      />
-      {taskList}
-    </div>
+      <div className="App">
+        <AddTaskForm
+            input={inputField}
+            onAddClick={addTask}
+            onTaskChange={event => saveInput(event)}
+        />
+        {taskList}
+      </div>
   );
 }
 
