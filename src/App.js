@@ -41,7 +41,7 @@ const App = () => {
     setToDoList(toDoListCopy);
   };
 
-  const checkDone = id => {
+  const changeStatus = id => {
     const index = toDoList.findIndex(task => task.id === id);
     const taskCopy = {...toDoList[index]};
     taskCopy.isActive = !taskCopy.isActive;
@@ -59,7 +59,7 @@ const App = () => {
               key={task.id}
               taskText={task.task}
               taskStatus={task.isActive}
-              done={() => checkDone(task.id)}
+              switchStatus={() => changeStatus(task.id)}
               remove={() => {
                 removeTask(task.id)
               }}

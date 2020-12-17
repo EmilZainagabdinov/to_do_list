@@ -15,7 +15,7 @@ const Task = props => {
   return (
       <div className='taskBody'>
         <div className={taskClass}>
-          <span className='checkBox' onClick={props.done}>{checkBox}</span>
+          <span className='checkBox' onClick={props.switchStatus}>{checkBox}</span>
           <p>{props.taskText}</p>
         </div>
         <button className='removeButton' onClick={props.remove}>&#10005;</button>
